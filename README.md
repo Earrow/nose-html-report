@@ -6,3 +6,9 @@
 ```
 nosetests --with-html --html-file=report.html --html-title=测试报告
 ```
+
+效果示例：
+![image](https://github.com/Earrow/nose-html-report/blob/master/images/001.png)
+
+
+插件参考了[nose2-html-report](https://github.com/mgrijalva/nose2-html-report)和[nose-html-output](https://github.com/openstack-infra/nose-html-output)。
