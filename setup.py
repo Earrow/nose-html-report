@@ -8,7 +8,7 @@ setup(
     author='Earrow',
     author_email='earrow.liu@gmail.com',
     url='https://github.com/Earrow/nose-html-report',
-    install_requires=['jinja2'],
+    install_requires=['jinja2', 'nose'],
     package_data={
         'nose_html_report': ['templates/report.html']
     },

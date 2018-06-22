@@ -129,7 +129,7 @@ class HTMLReport(Plugin):
             'test_report_title': self.html_report_title,
             'test_summary': self.summary_stats,
             'test_results': self.results,
-            # 'autocomplete_terms': json.dumps(self._generate_search_terms()),
+            'autocomplete_terms': json.dumps(self._generate_search_terms()),
             'timestamp': datetime.utcnow().strftime('%Y/%m/%d %H:%M:%S UTC')
         }
         template = load_template(self.default_template_path)
@@ -161,17 +161,11 @@ class HTMLReport(Plugin):
             classes.append(cls)
         rmap[cls].append(data_tuple)
 
-    # def _generate_search_terms(self):
-    #     search_terms = {}
-    #
-    #     for test_result in self.results:
-    #         search_terms[test_result['name']] = test_result['name']
-    #
-    #         if test_result['description']:
-    #             for token in test_result['description'].split():
-    #                 if token in search_terms:
-    #                     search_terms[token].append(test_result['name'])
-    #                 else:
-    #                     search_terms[token] = [test_result['name']]
-    #
-    #     return search_terms
+    def _generate_search_terms(self):
+        search_terms = {}
+
+        for test_result in self.results:
+            search_terms[test_result['name']] = test_result['name']
+            search_terms[test_result['description']] = test_result['name']
+
+        return search_terms
