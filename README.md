@@ -2,6 +2,11 @@
 
 为nose创建html报告的插件。
 
+安装：
+```
+python setup.py install
+```
+
 用法：
 ```
 nosetests --with-html --html-file=report.html --html-title=测试报告
